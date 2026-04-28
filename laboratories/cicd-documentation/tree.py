@@ -54,6 +54,15 @@ class Tree:
             return None
 
     def _find(self, data, node):
+        """Method to recursively find data starting from a specific node.
+
+        Args:
+            data (int): The data to search for.
+            node (Node): The current node being inspected.
+
+        Returns:
+            Node: The node containing the data, or None if not found.
+        """
         if data == node.data:
             return node
         elif (data < node.data and node.left is not None):
