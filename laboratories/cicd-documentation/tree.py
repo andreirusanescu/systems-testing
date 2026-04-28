@@ -98,11 +98,11 @@ class TestTreeFind(unittest.TestCase):
 
     def test_find_non_existing_element(self):
         result = self.tree.find(100)
-        self.assertIsNone(result, "Should be none")
+        self.assertIsNone(result, "Should be none!")
 
     def test_find_root(self):
         result = self.tree.find(50)
-        self.assertEqual(result, self.tree.getRoot(), "Root was not found.")
+        self.assertEqual(result, self.tree.getRoot(), "Root was not found....")
 
 if __name__ == '__main__':
     unittest.main()
