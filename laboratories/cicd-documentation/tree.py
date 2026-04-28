@@ -102,7 +102,7 @@ class TestTreeFind(unittest.TestCase):
 
     def test_find_root(self):
         result = self.tree.find(50)
-        self.assertEqual(result, self.tree.getRoot(), "Root was not found.")
+        self.assertEqual(result, self.tree.getRoot(), "Root was not found....")
 
 if __name__ == '__main__':
     unittest.main()
