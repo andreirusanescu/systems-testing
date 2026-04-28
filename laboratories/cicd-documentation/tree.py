@@ -1,5 +1,5 @@
 from node import Node
-
+import unittest
 
 class Tree:
     """ Tree class for binary tree """
@@ -76,10 +76,33 @@ class Tree:
 
     def _printPreorderTree(self, node):
         # TODO
-        pass
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printPreorderTree(node.left)
+            self._printPostorderTree(node.right)
 
     def _printPostorderTree(self, node):
         # TODO
-        pass
+        if node is not None:
+            self._printPreorderTree(node.left)
+            self._printPostorderTree(node.right)
+            print(str(node.data) + ' ')
 
 
+class TestTreeFind(unittest.TestCase):
+    def setUp(self):
+        self.tree = Tree()
+        values = [50, 30, 70, 20, 40]
+        for v in values:
+            self.tree.add(v)
+
+    def test_find_non_existing_element(self):
+        result = self.tree.find(100)
+        self.assertIsNone(result, "Should be none")
+
+    def test_find_root(self):
+        result = self.tree.find(50)
+        self.assertEqual(result, self.tree.getRoot(), "Root was not found.")
+
+if __name__ == '__main__':
+    unittest.main()
